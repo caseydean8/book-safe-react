@@ -19,8 +19,9 @@ class SearchResultContainer extends Component {
     console.log(query)
     API.search(query)
       .then(res => {
-        this.setState({ results: res.data.items[0].volumeInfo })
-        console.log(res.data.items[0].volumeInfo);
+        this.setState({ results: res.data.data })
+        // console.log(res.data.items[0].volumeInfo);
+        console.log(res.data)
       })
       .catch(err => console.log(err));
   };

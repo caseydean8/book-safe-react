@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import Container from "./Container"
 import SearchForm from "./SearchForm";
-// import ResultList from "./ResultList";
+import Results from "./Results";
 import API from "../utils/API";
 
 class SearchResultContainer extends Component {
@@ -11,12 +12,16 @@ class SearchResultContainer extends Component {
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchAPI("kittens");
+    this.searchAPI("godfather");
   }
 
   searchAPI = query => {
+    console.log(query)
     API.search(query)
-      .then(res => this.setState({ results: res.data.data }))
+      .then(res => {
+        this.setState({ results: res.data.items[0].volumeInfo })
+        console.log(res.data.items[0].volumeInfo);
+      })
       .catch(err => console.log(err));
   };
 
@@ -36,14 +41,21 @@ class SearchResultContainer extends Component {
 
   render() {
     return (
-      <div>
+      <Container>
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
+        <Results 
+        title={this.state.title}
+        authors={this.state.authors}
+        description={this.state.description}
+        image={this.state.image}
+        link={this.state.link}
+        />
         {/* <ResultList results={this.state.results} /> */}
-      </div>
+        </Container>
     );
   }
 }

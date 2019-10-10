@@ -4,10 +4,10 @@ import SearchForm from "./SearchForm";
 import Results from "./Results";
 import API from "../utils/API";
 
-class SearchResultContainer extends Component {
+class SearchComponent extends Component {
   state = {
     search: "",
-    results: []
+    results: {}
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
@@ -19,9 +19,9 @@ class SearchResultContainer extends Component {
     console.log(query)
     API.search(query)
       .then(res => {
-        this.setState({ results: res.data.data })
+        this.setState({ results: res.data.items[0].volumeInfo })
         // console.log(res.data.items[0].volumeInfo);
-        console.log(res.data)
+        console.log(res.data.items[0].volumeInfo)
       })
       .catch(err => console.log(err));
   };
@@ -49,11 +49,11 @@ class SearchResultContainer extends Component {
           handleInputChange={this.handleInputChange}
         />
         <Results 
-        title={this.state.title}
-        authors={this.state.authors}
-        description={this.state.description}
-        image={this.state.image}
-        link={this.state.link}
+        title={this.state.results.title}
+        authors={this.state.results.authors}
+        description={this.state.results.description}
+        image={this.state.results.imageLinks}
+        link={this.state.results.previewLink}
         />
         {/* <ResultList results={this.state.results} /> */}
         </Container>
@@ -61,4 +61,4 @@ class SearchResultContainer extends Component {
   }
 }
 
-export default SearchResultContainer;
+export default SearchComponent;

@@ -7,7 +7,7 @@ import API from "../utils/API";
 class SearchComponent extends Component {
   state = {
     search: "",
-    results: {}
+    results: []
   };
 
   // When this component mounts, search the Giphy API for pictures of kittens
@@ -19,9 +19,9 @@ class SearchComponent extends Component {
     console.log(query)
     API.search(query)
       .then(res => {
-        this.setState({ results: res.data.items[0].volumeInfo })
+        this.setState({ results: res.data.items })
         // console.log(res.data.items[0].volumeInfo);
-        console.log(res.data.items[0].volumeInfo)
+        console.log(res.data.items)
       })
       .catch(err => console.log(err));
   };
@@ -48,13 +48,18 @@ class SearchComponent extends Component {
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
         />
-        <Results 
-        title={this.state.results.title}
-        authors={this.state.results.authors}
-        description={this.state.results.description}
-        image={this.state.results.imageLinks}
-        link={this.state.results.previewLink}
-        />
+        {this.state.results.map(book => {
+          return (
+            <Results 
+            title={book.volumeInfo.title}
+            authors={book.volumeInfo.authors}
+            description={book.volumeInfo.description}
+            image={book.volumeInfo.imageLinks}
+            link={book.volumeInfo.previewLink}
+            />
+          )
+        })}
+        
         {/* <ResultList results={this.state.results} /> */}
         </Container>
     );

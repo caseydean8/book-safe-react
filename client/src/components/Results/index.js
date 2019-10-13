@@ -6,19 +6,17 @@ import AddBookBtn from "../AddBookBtn";
 function Results(props) {
     return (<div className="card">
         <img alt={props.title} className="img-fluid" src={props.image} />
-        <ul className="social-list">
-        <li><a href={props.link} className="social-link"><i className="fab fa-dribbble-square"></i></a></li>
-        </ul>
+        <a href={props.link}>get info</a>
         <h4 className="profile-name">{props.authors}</h4>
         <h2 className="profile-position">{props.title}</h2>
         <p className="profile-info">{props.description}</p>
-        {/* <AddBookBtn
-        title={book.volumeInfo.title}
-        authors={book.volumeInfo.authors}
-        description={book.volumeInfo.description}
-        // getting this thumbnail to not be undefined was a pain in the ass
-        image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""}
-        link={book.volumeInfo.previewLink} /> */}
+        <AddBookBtn
+        title={props.title}
+        authors={props.authors}
+        description={props.description}
+        image={props.imageLinks ? props.imageLinks.thumbnail : ""}
+        link={props.previewLink} 
+        />
     </div>
     )
 }

@@ -8,8 +8,7 @@ function Button({ type = "default", className, children, onClick }) {
     // className={["btn btn-lg", `btn-${type}`, className].join(" ")} 
     className="btn btn-primary mt-3"
     >
-      {/* {children} */}
-      Save
+      {children}
     </button>
   );
 }

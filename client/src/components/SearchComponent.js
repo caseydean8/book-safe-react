@@ -76,25 +76,22 @@ class SearchComponent extends Component {
         />
         {this.state.results.map(book => {
           return (
-            <div>
-            <Results 
-            title={book.volumeInfo.title}
-            authors={book.volumeInfo.authors}
-            description={book.volumeInfo.description}
-            // getting this thumbnail to not be undefined was a pain in the ass
-            image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""}
-            link={book.volumeInfo.previewLink}
-            // onClick={() => this.saveBook(book.id)}
-            />
-            <AddBookBtn
-            title={book.volumeInfo.title}
-            authors={book.volumeInfo.authors}
-            description={book.volumeInfo.description}
-            // getting this thumbnail to not be undefined was a pain in the ass
-            image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""}
-            link={book.volumeInfo.previewLink}
-            />
-           </div> 
+            <div className="card">
+              <img alt={book.volumeInfo.title} className="img-fluid" src={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""} />
+              <ul className="social-list">
+              <li><a href={book.volumeInfo.link} className="social-link"><i className="fab fa-dribbble-square"></i></a></li>
+              </ul>
+              <h4 className="profile-name">{book.volumeInfo.authors}</h4>
+              <h2 className="profile-position">{book.volumeInfo.title}</h2>
+              <p className="profile-info">{book.volumeInfo.description}</p>
+              <AddBookBtn
+              title={book.volumeInfo.title}
+              authors={book.volumeInfo.authors}
+              description={book.volumeInfo.description}
+              // getting this thumbnail to not be undefined was a pain in the ass
+              image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""}
+              link={book.volumeInfo.previewLink} />
+          </div>
           )
         })}
       </Container>

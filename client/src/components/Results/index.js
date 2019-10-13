@@ -12,7 +12,13 @@ function Results(props) {
         <h4 className="profile-name">{props.authors}</h4>
         <h2 className="profile-position">{props.title}</h2>
         <p className="profile-info">{props.description}</p>
-        <AddBookBtn />
+        {/* <AddBookBtn
+        title={book.volumeInfo.title}
+        authors={book.volumeInfo.authors}
+        description={book.volumeInfo.description}
+        // getting this thumbnail to not be undefined was a pain in the ass
+        image={book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : ""}
+        link={book.volumeInfo.previewLink} /> */}
     </div>
     )
 }

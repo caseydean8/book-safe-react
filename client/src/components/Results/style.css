@@ -25,3 +25,5 @@
   .profile-info     { grid-area: description; }
   .profile-img      { grid-area: image; }
   .social-list      { grid-area: social; }
+
+li {list-style-type: none;}

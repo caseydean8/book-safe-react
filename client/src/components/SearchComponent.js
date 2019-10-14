@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Container from "./Container"
 import SearchForm from "./SearchForm";
 import Results from "./Results";
 import API from "../utils/API";
@@ -13,7 +12,7 @@ class SearchComponent extends Component {
 
   // When this component mounts, search the Giphy API for pictures of kittens
   componentDidMount() {
-    this.searchAPI("godfather");
+    this.searchAPI("breakfast of champions");
   }
 
   searchAPI = query => {
@@ -48,14 +47,14 @@ class SearchComponent extends Component {
 
   render() {
     return (
-      <Container>
+      <div>
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
           getBooks={this.getBooks}
         />
-        
+
         {this.state.results.map(book => {
           return (
             <Results 
@@ -69,7 +68,7 @@ class SearchComponent extends Component {
             />
           )
         })}
-      </Container>
+      </div>
     );
   }
 }

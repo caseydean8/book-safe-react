@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Container from "./Container";
 import Saved from "./Saved";
 import Axios from "axios";
 
@@ -33,23 +32,22 @@ class SavedComponent extends Component {
     }
 
     render() {
-        return (
-            <Container>
-                {this.state.savedBooks.map(book => {
-                    console.log(book)
-                    return (
-                        <Saved
-                        key={book.id} 
-                        title={book.title}
-                        authors={book.authors}
-                        description={book.description}
-                        image={book.image}
-                        link={book.link}
-                        onClick={() => this.deleteBook(book._id)}
-                        />
-                    )
-                })}
-            </Container>
+      return (
+        <div>
+          {this.state.savedBooks.map(book => {
+            return (
+              <Saved
+              key={book.id} 
+              title={book.title}
+              authors={book.authors}
+              description={book.description}
+              image={book.image}
+              link={book.link}
+              onClick={() => this.deleteBook(book._id)}
+              />
+            )
+          })}
+        </div>
         )
     }
 }

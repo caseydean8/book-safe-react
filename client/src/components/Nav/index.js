@@ -3,7 +3,7 @@ import React from "react";
 
 function Nav() {
   return (
-    <div>
+    <div className="font">
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
       <a className="navbar-brand" id="homeLink" href="/">
         Home

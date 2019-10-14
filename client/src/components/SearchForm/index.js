@@ -17,15 +17,17 @@ function SearchForm(props) {
           placeholder="Search for a Book"
           id="search"
         />
-        <Button type="primary" onclick={props.handleFormSubmit}>
+        {/* <Button
+        type="primary" 
+        onclick={props.handleFormSubmit}>
           Search
-        </Button>
-        <Button type="primary" onclick={onclick} >
+        </Button> */}
+        {/* <Button type="primary" onclick={onclick} >
           Saved Books
-        </Button>
-        {/* <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
+        </Button> */}
+        <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
           Search
-        </button> */}
+        </button>
       </div>
     </form>
   );

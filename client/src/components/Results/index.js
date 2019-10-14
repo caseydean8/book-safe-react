@@ -13,8 +13,8 @@ function Results(props) {
         title={props.title}
         authors={props.authors}
         description={props.description}
-        image={props.imageLinks ? props.imageLinks.thumbnail : ""}
-        link={props.previewLink} 
+        image={props.image}
+        link={props.link} 
         />
     </div>
     )

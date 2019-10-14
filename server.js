@@ -9,25 +9,18 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static("public"));
-
-mongoose.connect("mongodb://localhost/googlebooks", { useNewUrlParser: true,
-useUnifiedTopology: true,
-useFindAndModify: false });
-
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+mongoose.connect(process.env.MONGODB_URI || "mongodb://Casey:Cdc108mlb@ds135128.mlab.com:35128/heroku_6l8f1vq3", { useNewUrlParser: true,
+useUnifiedTopology: true,
+useFindAndModify: false });
+
+
 // Define API routes here
 app.use(routes);
-// Send every other request to the React app
-// Define any API routes before this runs
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
-// });
 
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`);

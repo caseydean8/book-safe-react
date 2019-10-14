@@ -1,11 +1,22 @@
-<div class="card">
-    <img src="https://i.pravatar.cc/125?image=3" alt="" class="profile-img">
-    <ul class="social-list">
-      <li><a href="#" class="social-link"><i class="fab fa-dribbble-square"></i></a></li>
-      <li><a href="#" class="social-link"><i class="fab fa-facebook-square"></i></a></li>
-      <li><a href="#" class="social-link"><i class="fab fa-twitter-square"></i></a></li>
-    </ul>
-    <h2 class="profile-name">Ramsey Harper</h2>
-    <p class="profile-position">Graphic Designer</p>
-    <p class="profile-info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere a tempore, dignissimos odit accusantium repellat quidem, sit molestias dolorum placeat quas debitis ipsum esse rerum?</p>
-</div>
+import React from "react";
+import './style.css'
+
+function Saved(props) {
+  return (<div className="card">
+      <img alt={props.title} className="img-fluid" src={props.image} />
+      <a href={props.link}>get info</a>
+      <h4 className="profile-name">{props.authors}</h4>
+      <h2 className="profile-position">{props.title}</h2>
+      <p className="profile-info">{props.description}</p>
+      {/* <AddBookBtn
+      title={props.title}
+      authors={props.authors}
+      description={props.description}
+      image={props.imageLinks ? props.imageLinks.thumbnail : ""}
+      link={props.previewLink} 
+      /> */}
+  </div>
+  )
+}
+
+export default Saved;

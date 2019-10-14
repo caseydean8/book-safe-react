@@ -1,6 +1,5 @@
 import React from "react";
 import Button from "../Button"
-// import Axios from "axios";
 
 function SearchForm(props) {
 
@@ -27,6 +26,11 @@ function SearchForm(props) {
         </Button> */}
         <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
           Search
+        </button>
+        <button 
+        href="/api/books"
+        className="btn btn-primary mt-3">
+        Saved
         </button>
       </div>
     </form>

@@ -3,6 +3,7 @@ import Container from "./Container"
 import SearchForm from "./SearchForm";
 import Results from "./Results";
 import API from "../utils/API";
+import Axios from "axios";
 
 class SearchComponent extends Component {
   state = {
@@ -39,6 +40,12 @@ class SearchComponent extends Component {
     this.searchAPI(this.state.search);
   };
 
+  getBooks = () => {
+    Axios.get("/api/books")
+    .then(console.log("getBooks triggered"))
+    .catch(err => console.log(err))
+}
+
   render() {
     return (
       <Container>
@@ -46,7 +53,9 @@ class SearchComponent extends Component {
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}
           handleInputChange={this.handleInputChange}
+          getBooks={this.getBooks}
         />
+        
         {this.state.results.map(book => {
           return (
             <Results 

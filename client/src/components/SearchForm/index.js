@@ -1,6 +1,9 @@
 import React from "react";
+import Button from "../Button"
+// import Axios from "axios";
 
 function SearchForm(props) {
+
   return (
     <form>
       <div className="form-group">
@@ -14,9 +17,15 @@ function SearchForm(props) {
           placeholder="Search for a Book"
           id="search"
         />
-        <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
+        <Button type="primary" onclick={props.handleFormSubmit}>
           Search
-        </button>
+        </Button>
+        <Button type="primary" onclick={onclick} >
+          Saved Books
+        </Button>
+        {/* <button onClick={props.handleFormSubmit} className="btn btn-primary mt-3">
+          Search
+        </button> */}
       </div>
     </form>
   );

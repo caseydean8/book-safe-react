@@ -41,8 +41,8 @@ class SavedComponent extends Component {
                         authors={book.authors}
                         description={book.description}
                         // getting this thumbnail to not be undefined was a pain in the ass
-                        image={book.imageLinks ? book.imageLinks.thumbnail : ""}
-                        link={book.previewLink}
+                        image={book.image}
+                        link={book.link}
                         />
                     )
                 })}

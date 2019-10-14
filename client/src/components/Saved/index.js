@@ -1,5 +1,6 @@
 import React from "react";
 import './style.css'
+// import DeleteBtn from "../DeleteBtn"
 
 function Saved(props) {
   return (<div className="card">
@@ -8,13 +9,6 @@ function Saved(props) {
       <h4 className="profile-name">{props.authors}</h4>
       <h2 className="profile-position">{props.title}</h2>
       <p className="profile-info">{props.description}</p>
-      {/* <AddBookBtn
-      title={props.title}
-      authors={props.authors}
-      description={props.description}
-      image={props.imageLinks ? props.imageLinks.thumbnail : ""}
-      link={props.previewLink} 
-      /> */}
   </div>
   )
 }

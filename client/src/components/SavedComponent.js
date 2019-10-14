@@ -25,7 +25,10 @@ class SavedComponent extends Component {
     deleteBook = id => {
         console.log(id);
         Axios.delete(`/api/books/${id}`)
-        .then(() => {this.getBooks()})
+        .then(() => {
+          this.getBooks()
+          console.log(`book ${id} deleted`)
+        })
         .catch(err => console.log(err))
     }
 
@@ -40,9 +43,9 @@ class SavedComponent extends Component {
                         title={book.title}
                         authors={book.authors}
                         description={book.description}
-                        // getting this thumbnail to not be undefined was a pain in the ass
                         image={book.image}
                         link={book.link}
+                        onClick={() => this.deleteBook(book._id)}
                         />
                     )
                 })}

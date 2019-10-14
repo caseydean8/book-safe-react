@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Button from "../Button";
 import axios from "axios";
 
-class AddBookBtn extends React.Component{
+class AddBookBtn extends Component{
  
     postToDB = (props) => {
         var dbBook = {

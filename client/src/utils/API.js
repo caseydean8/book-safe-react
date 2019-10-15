@@ -4,10 +4,11 @@ require('dotenv').config();
 const BASEURL = `https://www.googleapis.com/books/v1/volumes?q=`;
 
 // google api key
-const APIKEY = `${process.env.REACT_APP_API_KEY}`;
+// const APIKEY = `${process.env.REACT_APP_API_KEY}`;
 
 export default {
   search: function(query) {
-    return axios.get(`${BASEURL }${query}&key=${APIKEY}`);
+    // &key=${APIKEY}
+    return axios.get(`${BASEURL }${query}`);
   }
 };

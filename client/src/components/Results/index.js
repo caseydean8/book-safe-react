@@ -5,7 +5,7 @@ import AddBookBtn from "../AddBookBtn";
 function Results(props) {
     return (<div className="card">
         <img alt={props.title} className="img-fluid" src={props.image} />
-        <a href={props.link}>get info</a>
+        <a target="_blank" rel="noopener noreferrer" href={props.link}>get info</a>
         <h4 className="profile-name">{props.authors}</h4>
         <h2 className="profile-position">{props.title}</h2>
         <p className="profile-info">{props.description}</p>

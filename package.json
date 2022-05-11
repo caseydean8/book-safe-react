@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "book-safe-react",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "MERN stack google book search app",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -27,6 +27,7 @@
     "jquery": "^3.4.1",
     "mongodb": "^3.3.2",
     "mongoose": "^5.7.3",
+    "mpath": "^0.9.0",
     "popper.js": "^1.15.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",

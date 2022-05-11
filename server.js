@@ -13,14 +13,17 @@ app.use(express.json());
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
-  app.use('/',express.static(path.join(__dirname, "client/build")));
+  app.use("/", express.static(path.join(__dirname, "client/build")));
 }
 
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-});
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+  })
+  .then(() => console.log(`connected to Mongo.`))
+  .catch((err) => console.error(`Error connecting to Mongo`, err));
 
 // Define API routes here
 app.use(routes);

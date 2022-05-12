@@ -3,7 +3,7 @@ import './style.css'
 import AddBookBtn from "../AddBookBtn";
 
 function Results(props) {
-    return (<div className="card">
+    return (<div className="col-12 book">
         <img alt={props.title} className="img-fluid" src={props.image} />
         <a target="_blank" rel="noopener noreferrer" href={props.link}>get info</a>
         <h4 className="profile-name">{props.authors}</h4>

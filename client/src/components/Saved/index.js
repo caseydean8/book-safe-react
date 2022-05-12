@@ -3,7 +3,7 @@ import './style.css'
 import DeleteBtn from "../DeleteBtn";
 
 function Saved(props) {
-  return (<div className="card">
+  return (<div className="col-12">
       <img alt={props.title} className="img-fluid" src={props.image} />
       <a href={props.link}>get info</a>
       <h4 className="profile-name">{props.authors}</h4>

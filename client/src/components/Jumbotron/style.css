@@ -1,6 +1,7 @@
 div.jumbotron {
 background-image: url(./videoblocks-old-library-shelves_bn3eipdwb_thumbnail-full01.png);
 background-size: cover;
+margin-bottom: 1rem;
 }
 
 .white{
@@ -10,5 +11,5 @@ background-size: cover;
 }
 
 h1 {
-    font-family: 'Satisfy', cursive;
+    /* font-family: 'Satisfy', cursive; */
 }

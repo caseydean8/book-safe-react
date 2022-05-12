@@ -43,7 +43,7 @@ class SearchComponent extends Component {
 
   render() {
     return (
-      <div>
+      <div id="search-container">
         <SearchForm
           search={this.state.search}
           handleFormSubmit={this.handleFormSubmit}

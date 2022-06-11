@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Saved from "./Saved";
+import ListItem from "./ListItem";
+import DeleteBtn from "./DeleteBtn";
 import Axios from "axios";
 
 class SavedComponent extends Component {
@@ -33,15 +34,19 @@ class SavedComponent extends Component {
       <div>
         {this.state.savedBooks.map((book) => {
           return (
-            <Saved
-              key={book._id}
-              title={book.title}
-              authors={book.authors}
-              description={book.description}
-              image={book.image}
-              link={book.link}
-              onClick={() => this.deleteBook(book._id)}
-            />
+            <div key={book._id} className="card">
+              <div className="card-body">
+                <ListItem
+                  key={book._id}
+                  title={book.title}
+                  authors={book.authors}
+                  description={book.description}
+                  image={book.image}
+                  link={book.link}
+                />
+                <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+              </div>
+            </div>
           );
         })}
       </div>

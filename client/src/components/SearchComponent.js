@@ -52,9 +52,9 @@ class SearchComponent extends Component {
           getBooks={this.getBooks}
         />
 
-        {this.state.results.map((book, index) => {
+        {this.state.results.map((book) => {
           return (
-            <div key={index} className="card">
+            <div key={book.id} className="card">
               <div className="card-body">
                 <ListItem
                   title={book.volumeInfo.title}

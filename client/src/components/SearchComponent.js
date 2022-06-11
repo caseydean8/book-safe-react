@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import SearchForm from "./SearchForm";
-// import Results from "./Results";
 import ListItem from "./ListItem";
 import API from "../utils/API";
 import Axios from "axios";
+import AddBookBtn from "./AddBookBtn";
 
 class SearchComponent extends Component {
   state = {
@@ -52,21 +52,34 @@ class SearchComponent extends Component {
           getBooks={this.getBooks}
         />
 
-        {this.state.results.map((book) => {
+        {this.state.results.map((book, index) => {
           return (
-            <ListItem
-              key={book.id}
-              title={book.volumeInfo.title}
-              authors={book.volumeInfo.authors}
-              description={book.volumeInfo.description}
-              // getting this thumbnail to not be undefined was a pain in the ass
-              image={
-                book.volumeInfo.imageLinks
-                  ? book.volumeInfo.imageLinks.thumbnail
-                  : ""
-              }
-              link={book.volumeInfo.previewLink}
-            />
+            <div key={index} className="card">
+              <div className="card-body">
+                <ListItem
+                  title={book.volumeInfo.title}
+                  authors={book.volumeInfo.authors}
+                  description={book.volumeInfo.description}
+                  image={
+                    book.volumeInfo.imageLinks
+                      ? book.volumeInfo.imageLinks.thumbnail
+                      : ""
+                  }
+                  link={book.volumeInfo.previewLink}
+                />
+                <AddBookBtn
+                  title={book.volumeInfo.title}
+                  authors={book.volumeInfo.authors}
+                  description={book.volumeInfo.description}
+                  image={
+                    book.volumeInfo.imageLinks
+                      ? book.volumeInfo.imageLinks.thumbnail
+                      : ""
+                  }
+                  link={book.volumeInfo.previewLink}
+                />
+              </div>
+            </div>
           );
         })}
       </div>

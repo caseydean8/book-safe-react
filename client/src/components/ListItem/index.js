@@ -1,6 +1,10 @@
 import React from "react";
 
 function ListItem(props) {
+  let authors = [];
+  props.authors.forEach((author, index) => {
+    authors.push(<h4 key={index}>{author}</h4>);
+  });
   return (
     <div>
       <div className="row">
@@ -8,8 +12,8 @@ function ListItem(props) {
           <img alt={props.title} src={props.image} />
         </div>
         <div className="col text-center">
-          <h2>{props.authors}</h2>
-          <h4>{props.title}</h4>
+          <h2>{props.title}</h2>
+          {authors}
           <a target="_blank" rel="noopener noreferrer" href={props.link}>
             get info
           </a>

@@ -8,7 +8,6 @@ class SavedComponent extends Component {
     savedBooks: [],
     initialized: true,
   };
-
   componentDidMount() {
     this.getBooks();
   }
@@ -30,6 +29,7 @@ class SavedComponent extends Component {
   };
 
   render() {
+    console.log(this.state.savedBooks);
     return (
       <div>
         {this.state.savedBooks.map((book) => {

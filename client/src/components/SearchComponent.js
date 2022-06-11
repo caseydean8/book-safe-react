@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SearchForm from "./SearchForm";
-import Results from "./Results";
+// import Results from "./Results";
+import ListItem from "./ListItem";
 import API from "../utils/API";
 import Axios from "axios";
 
@@ -53,7 +54,7 @@ class SearchComponent extends Component {
 
         {this.state.results.map((book) => {
           return (
-            <Results
+            <ListItem
               key={book.id}
               title={book.volumeInfo.title}
               authors={book.volumeInfo.authors}

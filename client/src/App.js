@@ -10,7 +10,7 @@ import SavedComponent from "./components/SavedComponent";
 class App extends Component {
   render() {
     return (
-      <div className='container'>
+      <div className='container p-0'>
         <Nav/>
         <Jumbotron/>
           <Router>

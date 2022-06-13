@@ -1,10 +1,14 @@
 import React from "react";
 
 function ListItem(props) {
+  // handle multiple authors
+  const authorArr = props.authors;
   let authors = [];
-  props.authors.forEach((author, index) => {
-    authors.push(<h4 key={index}>{author}</h4>);
-  });
+  if (authorArr) {
+    authorArr.forEach((author, index) => {
+      authors.push(<h4 key={index}>{author}</h4>);
+    });
+  }
   return (
     <div>
       <div className="row">

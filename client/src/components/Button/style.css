@@ -1,52 +1,26 @@
-.card-btn {
-  border-radius: 50%;
-  height: 50px;
-  width: 50px;
-  position: absolute;
+.ripple {
+  background-position: center;
+  transition: background 0.8s;
+}
+.ripple:hover {
+  background: #47a7f5 radial-gradient(circle, transparent 1%, #47a7f5 1%) center/15000%;
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+}
+
+/* Button style */
+button {
   border: none;
-  bottom: 10%;
-  color: #fff;
-  font-size: 24px;
+  border-radius: 2px;
+  padding: 12px 18px;
+  font-size: 16px;
   cursor: pointer;
-  font-family: FontAwesome;
+  color: white;
+  background-color: #2196f3;
+  box-shadow: 0 0 4px #999;
   outline: none;
-}
-
-.back {
-  top: 50%;
-  left: 1%;
-  background: #43a047;
-}
-
-.back::after {
-  content: "\f0a8";
-}
-
-.next {
-  top: 50%;
-  right: 1%;
-  background: #43a047;
-}
-
-.next::after {
-  content: "\f0a9";
-}
-
-.next:hover::after,
-.back:hover::after {
-  animation: iconBounce 0.57s 1;
-}
-
-@keyframes iconBounce {
-  0% {
-    font-size: 24px;
-  }
-
-  50% {
-    font-size: 28px;
-  }
-
-  100% {
-    font-size: 24px;
-  }
+  width: 6.5rem;
 }

@@ -6,8 +6,7 @@ function Button({ type = "default", className, children, onClick }) {
   return (
     <button 
     onClick={onClick} 
-    // className={["btn btn-lg", `btn-${type}`, className].join(" ")} 
-    className="btn btn-primary mt-3"
+    className="btn mt-3 ripple"
     >
     {children}
     </button>

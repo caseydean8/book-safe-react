@@ -2,14 +2,10 @@ div.jumbotron {
 background-image: url(./videoblocks-old-library-shelves_bn3eipdwb_thumbnail-full01.png);
 background-size: cover;
 margin-bottom: 1rem;
+border-radius: 0;
 }
 
 .white{
     color:floralwhite;
     text-align: center;
-    /* font-family: 'Lato', sans-serif; */
-}
-
-h1 {
-    /* font-family: 'Satisfy', cursive; */
 }

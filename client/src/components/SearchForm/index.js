@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button";
 import "./style.css";
 
 function SearchForm(props) {
@@ -17,12 +18,7 @@ function SearchForm(props) {
           />
         </div>
         <div className="col">
-          <button
-            onClick={props.handleFormSubmit}
-            className="btn btn-primary"
-          >
-            Search
-          </button>
+          <Button onClick={props.handleFormSubmit}>Search</Button>
         </div>
       </div>
     </form>

@@ -10,6 +10,11 @@ function ListItem(props) {
       authors.push(<h4 key={index}>{author}</h4>);
     });
   }
+  console.log(`props.image`)
+  console.log(props.image)
+  console.log(`noThumbnail`);
+  console.log(NoThumbnail);
+  
   let showImg = NoThumbnail
   if (props.image) {
     showImg = props.image

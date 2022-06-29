@@ -1,11 +1,11 @@
 .jumbotron {
   background-image: url(./videoblocks-old-library-shelves_bn3eipdwb_thumbnail-full01.png);
   background-size: cover;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   border-radius: 0;
 }
 
-.white {
-  color: floralwhite;
-  text-align: center;
+.display-3, .lead {
+    color: white;
+    text-align: center;
 }

@@ -5,17 +5,7 @@
     overflow-x: hidden !important;
   }
 
-  .form-control {
-    margin-left: 6px;
-  }
 
-  .ripple {
-    margin-right: 6px;
-  }
-
-  .search-btn-col {
-    padding-left: 0;
-  }
 }
 
 .card-text {

@@ -1,4 +1,16 @@
-form {
-  margin-bottom: 1rem;
+.form-control {
+  margin-right: .5rem;
 }
 
+.input-group {
+  margin: .5rem 0;
+}
+
+@media screen and (max-device-width: 574px){
+  .form-control {
+    margin-left: .5rem;
+  }
+  .ripple {
+    margin-right: .5rem;
+  }
+}

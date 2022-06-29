@@ -1,5 +1,6 @@
 .form-control {
   margin-right: .5rem;
+  border-radius: 0.25rem!important;
 }
 
 .input-group {

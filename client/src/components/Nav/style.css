@@ -5,3 +5,9 @@
 .navbar {
   background-color: #2196f3;
 }
+
+@media screen and (max-device-width: 574px) {
+  .navbar-brand {
+    margin-left: 1rem;
+  }
+}

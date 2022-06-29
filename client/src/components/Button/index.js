@@ -6,7 +6,7 @@ function Button({ type = "default", className, children, onClick }) {
   return (
     <button 
     onClick={onClick} 
-    className="btn ripple"
+    className="btn float-right ripple"
     >
     {children}
     </button>

@@ -5,7 +5,7 @@ import "./style.css";
 function SearchForm(props) {
   return (
     <form>
-      <div className="row">
+      <div className="row justify-content-between">
         <div className="col-8">
           <input
             onChange={props.handleInputChange}
@@ -17,7 +17,7 @@ function SearchForm(props) {
             id="search"
           />
         </div>
-        <div className="col">
+        <div className="col search-btn-col">
           <Button onClick={props.handleFormSubmit}>Search</Button>
         </div>
       </div>

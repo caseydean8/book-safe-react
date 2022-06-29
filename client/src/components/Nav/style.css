@@ -1,3 +1,7 @@
 .font {
-    font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
+}
+
+.navbar {
+  background-color: #2196f3;
 }
